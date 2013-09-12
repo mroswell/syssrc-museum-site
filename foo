@@ -1,0 +1,13 @@
+CREATE TABLE `artifacts` (
+  `id` int(25) unsigned NOT NULL AUTO_INCREMENT,
+  `image1` varchar(200) DEFAULT NULL,
+  `narrative` varchar(8000) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  FULLTEXT KEY `mykey` (`narrative`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+LOCK TABLES `artifacts` WRITE;
+/*!40000 ALTER TABLE `artifacts` DISABLE KEYS */;
+INSERT INTO `artifacts` VALUES (1,'http://upload.wikimedia.org/wikipedia/en/8/82/Apple_II_tranparent_800.png','the apple 2 was.......'),(2,'http://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Commodore-64-Computer.png/800px-Commodore-6','Teh Commodore 64 was cool');

@@ -1,0 +1,21 @@
+<html>
+   <head>
+      <title> Museum </title>
+      {% load static from staticfiles %}
+      <link rel="stylesheet" href="{% static 'style.css' %}" />
+   </head.
+<body>
+   <h1>Item = {{ artifact.id }}</h1><br>
+<table>
+  <tr><td width="500">  <img src="{{ artifact.url }}" width="800"></td>
+  <td> {{ artifact.description }}</td>
+  </tr>
+</table>
+{% if previous != 0 %}
+<a href="http://museum.syssrc.com/artifacts/{{ previous }}">Previous</a>
+{% endif %}
+{% if next != 0 %}
+<a href="http://museum.syssrc.com/artifacts/{{ next }}">Next</a>
+{% endif %}
+</body>
+</html>
