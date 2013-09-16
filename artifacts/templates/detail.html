@@ -1,121 +1,67 @@
+<!DOCTYPE html>
 <html>
    <head>
       <title> Museum </title>
       {% load static from staticfiles %}
       <link rel="stylesheet" href="{% static 'bootstrap.css' %}" />
-<style>
-@font-face {
-  font-family: 'Glyphicons Halflings';
-  src: url(' {% static "bootstrap-3.0.0/fonts/glyphicons-halflings-regular.eot" %} ');
-  src: url(' {% static "bootstrap-3.0.0/fonts/glyphicons-halflings-regular.eot?#iefix" %} ') format('embedded-opentype'), 
-       url(' {% static "bootstrap-3.0.0/fonts/glyphicons-halflings-regular.woff" %} ')  format('woff'), 
-       url(' {% static "bootstrap-3.0.0/fonts/glyphicons-halflings-regular.ttf" %} ') format('truetype'), 
-       url(' {% static "bootstrap-3.0.0/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular" %} ') format('svg');
-}
+      <link rel="stylesheet" href ="{% static 'font-awesome/css/font-awesome.css' %}" />
+      <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+      <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+      <link rel="stylesheet" href="{% static 'custom.css' %}" />
 
-// Catchall baseclass
-.glyphicon {
-  position: relative;
-  top: 1px;
-  display: inline-block;
-  font-family: 'Glyphicons Halflings';
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-}
-
-
-.glyphicon-chevron-left:before { content: "\e079"; } 
-.glyphicon-chevron-right:before { content: "\e080";  }
-
-
-      <link rel="stylesheet" href="{% static 'style.css' %}" />
-</style>
-</head>
+   </head>
 <body>
 
-      <div class="navbar navbar-default">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-      </div>
+   <div class="navbar navbar-inverse navbar-default">
+     <div class="navbar-header">
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="#">System Source Computer Museum Tour</a>
+     </div>
+   </div>
 
-          <div id="heroSlider" class="carousel slide">
    <h1>Item = {{ artifact.id }}</h1><br>
-<table>
-  <tr><td width="500">  <img src="{{ artifact.url }}" width="800"></td>
-  <td> {{ artifact.description }}</td>
-  </tr>
-</table>
+
+
+
+   <div class="container">
+ 
+<p style="text-align:left">
 {% if previous != 0 %}
-<a class="left carousel-control" data-slide="prev" href="http://museum.syssrc.com/artifacts/{{ previous }}"><</a>
-<a href="http://museum.syssrc.com/artifacts/{{ previous }}">Previous</a>
+<a href="http://museum.syssrc.com/artifacts/{{ previous }}"><span class="icon-circle-arrow-left icon-2x"> Previous</span></a>
 {% endif %}
 {% if next != 0 %}
-<a href="http://museum.syssrc.com/artifacts/{{ next }}">Next</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://museum.syssrc.com/artifacts/{{ next }}"><span class="icon-2x">Next </span><span class="icon-circle-arrow-right icon-2x"></span></a>
 {% endif %}
-</div>
-
-    <!-- Carousel
-    ================================================== -->
-    <div id="myCarousel" class="carousel slide">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="item active">
-          <img src="http://placehold.it/100x500&text=First slide" alt="First slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Do
-nec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricie
-s vehicula ut id elit.</p>
-              <p><a class="btn btn-large btn-primary" href="#">Sign up today</a>
 </p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="http://placehold.it/100x500&text=Second slide" alt="Second slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Do
-nec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricie
-s vehicula ut id elit.</p>
-              <p><a class="btn btn-large btn-primary" href="#">Learn more</a></p
->
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="http://placehold.it/100x500&text=Third slide" alt="Third slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Do
-nec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricie
-s vehicula ut id elit.</p>
-              <p><a class="btn btn-large btn-primary" href="#">Browse gallery</a
-></p>
-            </div>
-          </div>
-        </div>
+      <div class="row">
+         <div class="col-md-6"><img src="{{ artifact.url }}" width="400"></div>
+         <div class="col-md-6"> {{ artifact.description }}</div>
       </div>
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div><!-- /.carousel -->
+ </div>
 
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 visible-sm">
+        <p>Mobile Phone size</p>
+      </div>
+    </div><!-- end of "row" -->
 
+    <div class="row">
+      <div class="col-md-12 visible-md">
+        <p>Tablet size</p>
+      </div>
+    </div><!-- end of "row" -->
+
+    <div class="row">
+      <div class="col-md-12 visible-lg">
+        <p>Desktop Computer size</p>
+      </div>
+    </div><!-- end of "row" -->
+  </div>
 </body>
 </html>

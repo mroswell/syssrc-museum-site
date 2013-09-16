@@ -1,0 +1,9 @@
+body {
+}
+h1 {
+}
+
+a {text-decoration:none;}
+[class*=" icon-"] {text-decoration:none;}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {text-decoration:none;}
