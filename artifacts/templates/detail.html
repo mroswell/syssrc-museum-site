@@ -4,7 +4,6 @@
       <title> Museum </title>
       {% load static from staticfiles %}
       <link rel="stylesheet" href="{% static 'bootstrap.css' %}" />
-      <link rel="stylesheet" href ="{% static 'font-awesome/css/font-awesome.css' %}" />
       <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
       <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
       <link rel="stylesheet" href="{% static 'custom.css' %}" />
@@ -19,27 +18,24 @@
          <span class="icon-bar"></span>
          <span class="icon-bar"></span>
        </button>
-       <a class="navbar-brand" href="#">System Source Computer Museum Tour</a>
+       <a class="navbar-brand" href="/">System Source Computer Museum Tour</a>
+
      </div>
    </div>
-
-   <h1>Item = {{ artifact.id }}</h1><br>
-
 
 
    <div class="container">
  
-<p style="text-align:left">
-{% if previous != 0 %}
-<a href="http://museum.syssrc.com/artifacts/{{ previous }}"><span class="icon-circle-arrow-left icon-2x"> Previous</span></a>
-{% endif %}
-{% if next != 0 %}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="http://museum.syssrc.com/artifacts/{{ next }}"><span class="icon-2x">Next </span><span class="icon-circle-arrow-right icon-2x"></span></a>
-{% endif %}
-</p>
+   <p style="text-align:left">
+    {% if previous != 0 %}
+    <a href="http://museum.syssrc.com/artifacts/{{ previous }}"><span class="icon-circle-arrow-left icon-2x"> Previous</span></a>
+    {% endif %}
+    {% if next != 0 %}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="http://museum.syssrc.com/artifacts/{{ next }}"><span class="icon-2x">Next </span><span class="icon-circle-arrow-right icon-2x"></span></a>
+   {% endif %}
+  </p>
       <div class="row">
-         <div class="col-md-6"><img src="{{ artifact.url }}" width="400"></div>
+         <div class="col-md-6"><img src="{{ artifact.url }}" width="500"></div>
          <div class="col-md-6"> {{ artifact.description }}</div>
       </div>
  </div>
@@ -47,19 +43,19 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 visible-sm">
-        <p>Mobile Phone size</p>
+        <p><br />Screen Size: Mobile Phone</p>
       </div>
     </div><!-- end of "row" -->
 
     <div class="row">
       <div class="col-md-12 visible-md">
-        <p>Tablet size</p>
+        <p><br />Screen Size: Tablet</p>
       </div>
     </div><!-- end of "row" -->
 
     <div class="row">
       <div class="col-md-12 visible-lg">
-        <p>Desktop Computer size</p>
+        <p><br />Screen Size: Desktop Computer</p>
       </div>
     </div><!-- end of "row" -->
   </div>
