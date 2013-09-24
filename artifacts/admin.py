@@ -3,9 +3,9 @@ from django.contrib import admin
 from django.forms import TextInput, Textarea
 from django.db import models
 class ArtifactAdmin(admin.ModelAdmin):
-   fields  = ['url', 'description']
+   fields  = ['url','title','description','price', 'release_date', 'memory', 'cpu', 'display', 'storage', 'ports']
    formfield_overrides = {
-        models.CharField: {'widget': TextInput(attrs={'size':'60'})},
+        models.CharField: {'widget': Textarea(attrs={'rows':4, 'cols':40})},
         models.TextField: {'widget': Textarea(attrs={'rows':4, 'cols':40})},
    }
 

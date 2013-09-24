@@ -4,6 +4,17 @@ h1 {
 }
 
 a {text-decoration:none;}
+
+.navbar-text:hover, .navbar-text:focus, .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+    color: #dedede;
+}
+.navbar-text, .navbar-text, .navbar-inverse .navbar-brand, .navbar-inverse .navbar-brand {
+    color: #FFFFFF;
+}
+
+.navbar-inverse .brand, .navbar-inverse .nav > li > a {color:#efefef;}
 [class*=" icon-"] {text-decoration:none;}
 
 [class^="icon-"]:before, [class*=" icon-"]:before {text-decoration:none;}
+
+.icon-2x {font-size:1.58em;}

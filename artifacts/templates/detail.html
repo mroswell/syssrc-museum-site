@@ -12,14 +12,22 @@
 <body>
 
    <div class="navbar navbar-inverse navbar-default">
-     <div class="navbar-header">
+     <div class="navbar-inner">
        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
          <span class="icon-bar"></span>
          <span class="icon-bar"></span>
          <span class="icon-bar"></span>
        </button>
-       <a class="navbar-brand" href="/">System Source Computer Museum Tour</a>
+       <a class="navbar-brand" href="/"></a>
 
+   <ul class="nav navbar-text pull-right">
+    {% if previous != 0 %}
+    <li><a href="http://museum.syssrc.com/artifacts/{{ previous }}"><span class="icon-circle-arrow-left icon-2x"> Previous</span></a></li>
+    {% endif %}
+    {% if next != 0 %}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <li><a href="http://museum.syssrc.com/artifacts/{{ next }}"><span class="icon-2x">Next </span><span class="icon-circle-arrow-right icon-2x"></span></a></li>
+   {% endif %}
+  </ul>
      </div>
    </div>
 
@@ -29,14 +37,15 @@
    <p style="text-align:left">
     {% if previous != 0 %}
     <a href="http://museum.syssrc.com/artifacts/{{ previous }}"><span class="icon-circle-arrow-left icon-2x"> Previous</span></a>
-    {% endif %}
+    {% endif %} {{ artifact.id }}
     {% if next != 0 %}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="http://museum.syssrc.com/artifacts/{{ next }}"><span class="icon-2x">Next </span><span class="icon-circle-arrow-right icon-2x"></span></a>
    {% endif %}
   </p>
       <div class="row">
          <div class="col-md-6"><img src="{{ artifact.url }}" width="500"></div>
-         <div class="col-md-6"> {{ artifact.description }}</div>
+         <div class="col-md-6"> <strong>{{artifact.title}}</strong><br />{{ artifact.description }}</div>
+         
       </div>
  </div>
 
